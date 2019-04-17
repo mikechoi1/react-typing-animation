@@ -22,12 +22,12 @@ class Typing extends Component {
 
   componentDidUpdate(prevProps) {
     const { children } = this.props;
-
     if (
       children !== undefined &&
       JSON.stringify(children, getCircularReplacer()) !==
         JSON.stringify(prevProps.children, getCircularReplacer())
     ) {
+      console.log(this.props);
       this.resetState();
     }
   }
@@ -54,7 +54,6 @@ class Typing extends Component {
 
   resetState = async () =>
     this.updateState({
-      text: [],
       toType: extractText(this.props.children),
       cursor: {
         lineNum: 0,
