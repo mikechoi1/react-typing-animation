@@ -54,6 +54,7 @@ class Typing extends Component {
 
   resetState = async () =>
     this.updateState({
+      text: [],
       toType: extractText(this.props.children),
       cursor: {
         lineNum: 0,
