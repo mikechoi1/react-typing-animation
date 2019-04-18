@@ -416,8 +416,8 @@ var Typing = function (_Component) {
     value: function componentDidUpdate(prevProps) {
       var children = this.props.children;
 
-
       if (children !== undefined && JSON.stringify(children, (0, _utils.getCircularReplacer)()) !== JSON.stringify(prevProps.children, (0, _utils.getCircularReplacer)())) {
+        console.log(this.props);
         this.resetState();
       }
     }
